@@ -6,9 +6,15 @@ import './globals.css'
 import { Footer, Header } from './components';
 
 const fontInterM = Inter({
-  subsets: ['cyrillic'],
-  weight: ['400'],
-  variable: '--inter-m',
+  subsets: ['latin'],
+  weight: ['500'],
+  variable: '--inter-500',
+});
+
+const fontInterL = Inter({
+  subsets: ['latin'],
+  weight: ['700'],
+  variable: '--inter-700',
 });
 
 export const metadata: Metadata = {
@@ -22,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${fontInterM.variable}`}>
+    <html lang="en" className={`${fontInterM.variable} ${fontInterL.variable}`}>
       <body>
         <Header />
         <Fragment>{children}</Fragment>

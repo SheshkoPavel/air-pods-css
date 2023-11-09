@@ -11,7 +11,6 @@ import AirPodsBlack from "@/public/images/airpods-max-black.png";
 import AirPodsGreen from "@/public/images/airpods-max-green.png";
 import AirPodsWhite from "@/public/images/airpods-max-white.png";
 
-
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -50,9 +49,18 @@ export const Header = () => {
             </ul>
           </nav>
         </div>
+
         <div className="header__content">
-          <h1 className="title">Air Pod S M AX</h1>
-          <div className="header__content-images"></div>
+          <h1 className="title">
+            <span className="title--air">Air</span>
+            <span className="title--pod">Pod</span>
+            <span className="title--s">S</span>
+            <span className="title--m">M</span>
+            <span className="title--ax">AX</span>
+          </h1>
+          <div className="header__content-images">
+            <Image src={AirPodsBlue} alt="Blue airPods" />
+          </div>
         </div>
       </div>
     </header>

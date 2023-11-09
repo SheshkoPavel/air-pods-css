@@ -1,4 +1,4 @@
-:root {
+/* :root {    example
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
@@ -93,4 +93,134 @@ body {
   html {
     color-scheme: dark;
   }
+} */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+body {
+  color: #000;
+
+  font-family: var(--inter-500), sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 1220px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.header {
+  min-height: 100vh;
+  position: relative;
+}
+
+.header__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 0;
+}
+
+.menu__list {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  gap: 0 40px;
+
+  font-family: var(--inter-700), sans-serif;
+}
+
+.menu__btn {
+  padding: 15px 58px;
+  background-color: #000;
+  border-radius: 30px;
+
+  font-family: var(--inter-700), sans-serif;
+  font-size: 16px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.header__content-images {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.header__content-images::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(180deg, #cadbeb 0%, rgba(235, 235, 235, 0) 100%);
+  z-index: -2;
+}
+
+.header__content-images img {
+  height: fit-content;
+  object-fit: contain;
+}
+
+.title {
+  position: absolute;
+  font-family: var(--inter-700), sans-serif;
+  font-size: 210px;
+  padding-top: 110px;
+}
+
+.title--pod{
+  position: relative;
+  z-index: -1;
+}
+
+.title--s {
+  display: inline-block;
+  transform: translateY(60px);
+}
+
+.title--m{
+  display: inline-block;
+  transform: translate(-57px, 275px);
+}
+
+.title--ax{
+  display: inline-block;
+  position: relative;
+  transform: translate(-135px, 413px);
+  z-index: -1;
 }
