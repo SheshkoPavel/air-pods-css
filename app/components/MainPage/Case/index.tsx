@@ -17,7 +17,7 @@ export const CaseMain = () => {
         </p>
         <Image className="case__image" src={caseBlue} alt="blue case" />
         <h2 className="case__subtitle main__title">
-          Stayin' alive, stayin' alive.
+          Stayin&apos; alive, stayin&apos; alive.
         </h2>
         <p className="case__numbers">20</p>
         <p className="case__subtext">
