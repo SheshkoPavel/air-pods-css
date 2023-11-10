@@ -147,6 +147,7 @@ h1 {
 .main__title {
   font-family: var(--inter-700), sans-serif;
   font-size: 64px;
+  margin-bottom: 20px;
 }
 
 .header {
@@ -298,4 +299,39 @@ h1 {
 
 .composition__inner-text p {
   width: 230px;
+}
+
+.case {
+  background-color: #fafafa;
+  text-align: center;
+  padding: 80px 0 100px;
+}
+
+.case__title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.case__text {
+  max-width: 825px;
+  margin: 0 auto 40px;
+}
+
+.case__bold {
+  font-family: var(--inter-700), sans-serif;
+}
+
+.case__numbers {
+  font-family: var(--inter-700), sans-serif;
+  font-size: 210px;
+}
+
+.case__subtitle {
+  padding-top: 160px;
+  margin-bottom: 40px;
+}
+
+.case__subtext {
+  max-width: 400px;
+  margin: 0 auto;
 }
