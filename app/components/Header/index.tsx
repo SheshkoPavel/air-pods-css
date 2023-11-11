@@ -59,7 +59,7 @@ export const Header = () => {
             <span className="title--ax">AX</span>
           </h1>
           <div className="header__content-images">
-            <Image src={AirPodsBlue} alt="Blue airPods" />
+            <Image src={AirPodsBlue} alt="Blue airPods" priority />
           </div>
         </div>
       </div>
