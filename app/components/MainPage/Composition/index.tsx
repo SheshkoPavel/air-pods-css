@@ -33,7 +33,11 @@ export const CompositionMain = () => {
               allowing you to maintain fit and isolation.
             </p>
           </div>
-          <Image className="" src={sideBlue} alt="red air pods" />
+          <Image
+            className="composition__inner-image"
+            src={sideBlue}
+            alt="red air pods"
+          />
         </div>
       </div>
     </section>
