@@ -195,8 +195,23 @@ h1 {
   right: 0;
   bottom: 0;
   width: 100%;
-  background: linear-gradient(180deg, #cadbeb 0%, rgba(235, 235, 235, 0) 100%);
   z-index: -2;
+}
+
+.header__content-images:has(.red)::before {
+  background: linear-gradient(180deg, #f3d6d1 0%, rgba(235, 235, 235, 0) 100%);
+}
+.header__content-images:has(.blue)::before {
+  background: linear-gradient(180deg, #cadbeb 0%, rgba(235, 235, 235, 0) 100%);
+}
+.header__content-images:has(.black)::before {
+  background: linear-gradient(180deg, #b6b6b6 0%, rgba(235, 235, 235, 0) 100%);
+}
+.header__content-images:has(.green)::before {
+  background: linear-gradient(180deg, #ddead9 0%, rgba(235, 235, 235, 0) 100%);
+}
+.header__content-images:has(.white)::before {
+  background: linear-gradient(180deg, #fafafa 0%, rgba(235, 235, 235, 0) 100%);
 }
 
 .header__content-images img {
@@ -453,9 +468,6 @@ h1 {
     left: 0;
     right: 0;
     text-align: center;
-  }
-  .title--pod {
-    /* z-index: 1; */
   }
   .title--s {
     transform: none;
