@@ -1,9 +1,47 @@
-import Link from "next/link";
+"use client";
+
 import Image from "next/image";
 
+import { useAppStore } from "@/app/store/app-state";
+
+import caseRed from "@/public/images/airpods-max-smartcase-case_red.png";
 import caseBlue from "@/public/images/airpods-max-smartcase-case_blue.png";
+import caseBlack from "@/public/images/airpods-max-smartcase-case_black.png";
+import caseGreen from "@/public/images/airpods-max-smartcase-case_green.png";
+import caseWhite from "@/public/images/airpods-max-smartcase-case_white.png";
 
 export const CaseMain = () => {
+  const selectedColor = useAppStore((state) => state.selectedColor);
+
+  let imageToShow = (
+    <Image className="case__image" src={caseBlue} alt="blue case" />
+  );
+  if (selectedColor === "red") {
+    imageToShow = (
+      <Image className="case__image" src={caseRed} alt="red case" />
+    );
+  }
+  if (selectedColor === "blue") {
+    imageToShow = (
+      <Image className="case__image" src={caseBlue} alt="blue case" />
+    );
+  }
+  if (selectedColor === "black") {
+    imageToShow = (
+      <Image className="case__image" src={caseBlack} alt="black case" />
+    );
+  }
+  if (selectedColor === "green") {
+    imageToShow = (
+      <Image className="case__image" src={caseGreen} alt="green case" />
+    );
+  }
+  if (selectedColor === "white") {
+    imageToShow = (
+      <Image className="case__image" src={caseWhite} alt="white case" />
+    );
+  }
+
   return (
     <section className="case">
       <div className="container">
@@ -15,7 +53,7 @@ export const CaseMain = () => {
           <span className="case__bold">Smart Case</span>, AirPods Max enter a
           low-power state to save energy.
         </p>
-        <Image className="case__image" src={caseBlue} alt="blue case" />
+        {imageToShow}
         <h2 className="case__subtitle main__title">
           Stayin&apos; alive, stayin&apos; alive.
         </h2>

@@ -1,9 +1,71 @@
-import Link from "next/link";
+"use client";
+
 import Image from "next/image";
 
+import { useAppStore } from "@/app/store/app-state";
+
+import sideRed from "@/public/images/airpods_side_red.jpg";
 import sideBlue from "@/public/images/airpods_side_blue.jpg";
+import sideBlack from "@/public/images/airpods_side_black.jpg";
+import sideGreen from "@/public/images/airpods_side_green.jpg";
+import sideWhite from "@/public/images/airpods_side_white.jpg";
 
 export const CompositionMain = () => {
+  const selectedColor = useAppStore((state) => state.selectedColor);
+
+  let imageToShow = (
+    <Image
+      className="composition__inner-image"
+      src={sideBlue}
+      alt="blue air pods"
+    />
+  );
+  if (selectedColor === "red") {
+    imageToShow = (
+      <Image
+        className="composition__inner-image"
+        src={sideRed}
+        alt="red air pods"
+      />
+    );
+  }
+  if (selectedColor === "blue") {
+    imageToShow = (
+      <Image
+        className="composition__inner-image"
+        src={sideBlue}
+        alt="blue air pods"
+      />
+    );
+  }
+  if (selectedColor === "black") {
+    imageToShow = (
+      <Image
+        className="composition__inner-image"
+        src={sideBlack}
+        alt="black air pods"
+      />
+    );
+  }
+  if (selectedColor === "green") {
+    imageToShow = (
+      <Image
+        className="composition__inner-image"
+        src={sideGreen}
+        alt="green air pods"
+      />
+    );
+  }
+  if (selectedColor === "white") {
+    imageToShow = (
+      <Image
+        className="composition__inner-image"
+        src={sideWhite}
+        alt="white air pods"
+      />
+    );
+  }
+
   return (
     <section className="composition">
       <div className="container">
@@ -33,11 +95,7 @@ export const CompositionMain = () => {
               allowing you to maintain fit and isolation.
             </p>
           </div>
-          <Image
-            className="composition__inner-image"
-            src={sideBlue}
-            alt="red air pods"
-          />
+          {imageToShow}
         </div>
       </div>
     </section>

@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+
+import { useAppStore } from "@/app/store/app-state";
 
 import logoImg from "@/public/images/logo.svg";
 import AirPodsRed from "@/public/images/airpods-max-red.png";
@@ -12,7 +13,25 @@ import AirPodsGreen from "@/public/images/airpods-max-green.png";
 import AirPodsWhite from "@/public/images/airpods-max-white.png";
 
 export const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const selectedColor = useAppStore((state) => state.selectedColor);
+  console.log("selectedColor <-------", selectedColor);
+
+  let imageToShow = <Image src={AirPodsBlue} alt="blue airPods" priority />;
+  if (selectedColor === "red") {
+    imageToShow = <Image src={AirPodsRed} alt="red airPods" priority />;
+  }
+  if (selectedColor === "blue") {
+    imageToShow = <Image src={AirPodsBlue} alt="blue airPods" priority />;
+  }
+  if (selectedColor === "black") {
+    imageToShow = <Image src={AirPodsBlack} alt="black airPods" priority />;
+  }
+  if (selectedColor === "green") {
+    imageToShow = <Image src={AirPodsGreen} alt="green airPods" priority />;
+  }
+  if (selectedColor === "white") {
+    imageToShow = <Image src={AirPodsWhite} alt="white airPods" priority />;
+  }
 
   return (
     <header className="header">
@@ -58,9 +77,7 @@ export const Header = () => {
             <span className="title--m">M</span>
             <span className="title--ax">AX</span>
           </h1>
-          <div className="header__content-images">
-            <Image src={AirPodsBlue} alt="Blue airPods" priority />
-          </div>
+          <div className="header__content-images">{imageToShow}</div>
         </div>
       </div>
     </header>

@@ -9,11 +9,11 @@ import selectBlue from "@/public/images/airpods-max-select__blue.png";
 import selectBlack from "@/public/images/airpods-max-select__black.png";
 import selectGreen from "@/public/images/airpods-max-select__green.png";
 import selectWhite from "@/public/images/airpods-max-select__white.png";
-
-const headphones = [selectRed, selectBlue];
+import { useAppStore } from "@/app/store/app-state";
 
 export const ColorMain = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const selectedColor = useAppStore((state) => state.selectedColor);
+  const setSelectedColor = useAppStore((state) => state.setSelectedColor);
 
   return (
     <section className="choose-color">
@@ -24,21 +24,46 @@ export const ColorMain = () => {
           AirPods. The ultimate personal audio experience.
         </p>
         <div className="choose-color__list">
-          <button className="choose-color__btn">
-            <Image className="" src={selectRed} alt="red air pods" />
-          </button>
-          {/* <button className="choose-color__btn">
-            <Image className="" src={selectBlue} alt="red air pods" />
-          </button> */}
-          <button className="choose-color__btn">
-            <Image className="" src={selectBlack} alt="red air pods" />
-          </button>
-          <button className="choose-color__btn">
-            <Image className="" src={selectGreen} alt="red air pods" />
-          </button>
-          <button className="choose-color__btn">
-            <Image className="" src={selectWhite} alt="red air pods" />
-          </button>
+          {selectedColor !== "red" && (
+            <button
+              className="choose-color__btn"
+              onClick={() => setSelectedColor("red")}
+            >
+              <Image src={selectRed} alt="red air pods" />
+            </button>
+          )}
+          {selectedColor !== "blue" && (
+            <button
+              className="choose-color__btn"
+              onClick={() => setSelectedColor("blue")}
+            >
+              <Image src={selectBlue} alt="blue air pods" />
+            </button>
+          )}
+          {selectedColor !== "black" && (
+            <button
+              className="choose-color__btn"
+              onClick={() => setSelectedColor("black")}
+            >
+              <Image src={selectBlack} alt="black air pods" />
+            </button>
+          )}
+          {selectedColor !== "green" && (
+            <button
+              className="choose-color__btn"
+              onClick={() => setSelectedColor("green")}
+            >
+              <Image src={selectGreen} alt="green air pods" />
+            </button>
+          )}
+          {selectedColor !== "white" && (
+            <button
+              className="choose-color__btn"
+              onClick={() => setSelectedColor("white")}
+            >
+              <Image src={selectWhite} alt="white air pods" />
+            </button>
+          )}
         </div>
       </div>
     </section>
