@@ -38,7 +38,7 @@ export const Header = () => {
                   Contacts
                 </Link>
               </li>
-              <li className="menu__item">
+              <li className="menu__item menu__item-btn">
                 <button
                   className="menu__btn"
                   onClick={() => console.log("click <-------")}
