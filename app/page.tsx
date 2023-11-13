@@ -1,5 +1,12 @@
-import Image from "next/image";
+import { AudioMain, CaseMain, ColorMain, CompositionMain } from "./components";
 
 export default function Home() {
-  return <main className=''>ok</main>;
+  return (
+    <main className="main">
+      <ColorMain />
+      <CompositionMain />
+      <CaseMain />
+      <AudioMain />
+    </main>
+  );
 }
