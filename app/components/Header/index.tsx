@@ -16,21 +16,48 @@ export const Header = () => {
   const selectedColor = useAppStore((state) => state.selectedColor);
   console.log("selectedColor <-------", selectedColor);
 
-  let imageToShow = <Image src={AirPodsBlue} alt="blue airPods" priority />;
+  let imageToShow = (
+    <Image className="blue" src={AirPodsBlue} alt="blue airPods" priority />
+  );
   if (selectedColor === "red") {
-    imageToShow = <Image src={AirPodsRed} alt="red airPods" priority />;
+    imageToShow = (
+      <Image className="red" src={AirPodsRed} alt="red airPods" priority />
+    );
   }
   if (selectedColor === "blue") {
-    imageToShow = <Image src={AirPodsBlue} alt="blue airPods" priority />;
+    imageToShow = (
+      <Image className="blue" src={AirPodsBlue} alt="blue airPods" priority />
+    );
   }
   if (selectedColor === "black") {
-    imageToShow = <Image src={AirPodsBlack} alt="black airPods" priority />;
+    imageToShow = (
+      <Image
+        className="black"
+        src={AirPodsBlack}
+        alt="black airPods"
+        priority
+      />
+    );
   }
   if (selectedColor === "green") {
-    imageToShow = <Image src={AirPodsGreen} alt="green airPods" priority />;
+    imageToShow = (
+      <Image
+        className="green"
+        src={AirPodsGreen}
+        alt="green airPods"
+        priority
+      />
+    );
   }
   if (selectedColor === "white") {
-    imageToShow = <Image src={AirPodsWhite} alt="white airPods" priority />;
+    imageToShow = (
+      <Image
+        className="white"
+        src={AirPodsWhite}
+        alt="white airPods"
+        priority
+      />
+    );
   }
 
   return (
